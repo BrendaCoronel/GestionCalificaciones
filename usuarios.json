@@ -1,0 +1,19 @@
+{
+    "usuarios": [
+        {
+            "nombre_usuario": "admin",
+            "contrasena": "password",
+            "rol": "admin"
+        },
+        {
+            "nombre_usuario": "alumno1",
+            "contrasena": "12345",
+            "rol": "alumno"
+        },
+        {
+            "nombre_usuario": "profesor1",
+            "contrasena": "54321",
+            "rol": "profesor"
+        }
+    ]
+}
