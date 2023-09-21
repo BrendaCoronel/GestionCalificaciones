@@ -13,7 +13,14 @@
         {
             "nombre_usuario": "profesor1",
             "contrasena": "54321",
-            "rol": "profesor"
+            "rol": "profesor",
+            "calificaciones": [
+                {
+                    "alumno": "alumno1",
+                    "asignatura": "lengua",
+                    "calificacion": "8"
+                }
+            ]
         }
     ]
 }
