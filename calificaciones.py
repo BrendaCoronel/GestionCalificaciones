@@ -29,6 +29,18 @@ def mostrar_perfil(rol):
         print("Bienvenido, Profesor")
         # Aquí puedes implementar la lógica para cargar y modificar notas.
 
+# Función para que un alumno pueda ver sus calificaciones
+def ver_calificaciones_alumno(usuarios, nombre_usuario):
+    for usuario in usuarios:
+        if usuario['nombre_usuario'] == nombre_usuario and usuario['rol'] == 'alumno':
+            if 'calificaciones' in usuario:
+                print(f"Calificaciones para {nombre_usuario}:")
+                for calificacion in usuario['calificaciones']:
+                    print(f"Asignatura: {calificacion['asignatura']}, Calificación: {calificacion['calificacion']}")
+                return
+
+    print("No se encontró al alumno o no tiene calificaciones registradas.")
+
 # Función para registrar una calificación para un alumno
 def registrar_calificacion(usuarios, nombre_usuario):
     alumno = input("Ingrese el nombre del alumno: ")
@@ -108,9 +120,31 @@ def main():
             registrar_calificacion(usuarios, nombre_usuario)
         elif opcion == "2":
             consultar_y_modificar_calificaciones(usuarios, nombre_usuario)
-        #elif opcion == "3":
-        #    registrar_alumno(usuarios)
+        elif opcion == "3":
+            #registrar_alumno(usuarios)
+        #elif opcion == "4":
+            print("Saliendo del menú.")
+            break
+        else:
+            print("Opción inválida. Por favor, selecciona una opción válida.")
+    while True:
+        print("\nMENU")
+        print("1. Registrar Calificación")
+        print("2. Consultar y Modificar Calificaciones")
+        print("3. Ver Mis Calificaciones")
+        print("4. Registrar Alumno")
+        print("5. Salir")
+        opcion = input("Selecciona una opción: ")
+
+        if opcion == "1":
+            registrar_calificacion(usuarios, nombre_usuario)
+        elif opcion == "2":
+            consultar_y_modificar_calificaciones(usuarios, nombre_usuario)
+        elif opcion == "3":
+            ver_calificaciones_alumno(usuarios, nombre_usuario)
         elif opcion == "4":
+           # registrar_alumno(usuarios)
+        #elif opcion == "5":
             print("Saliendo del menú.")
             break
         else:
